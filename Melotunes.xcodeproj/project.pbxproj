@@ -9,21 +9,74 @@
 /* Begin PBXBuildFile section */
 		AF62110B2AB3C2A00029A1E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62110A2AB3C2A00029A1E1 /* AppDelegate.swift */; };
 		AF62110D2AB3C2A00029A1E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62110C2AB3C2A00029A1E1 /* SceneDelegate.swift */; };
-		AF62110F2AB3C2A00029A1E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62110E2AB3C2A00029A1E1 /* ViewController.swift */; };
-		AF6211122AB3C2A00029A1E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF6211102AB3C2A00029A1E1 /* Main.storyboard */; };
 		AF6211142AB3C2A10029A1E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF6211132AB3C2A10029A1E1 /* Assets.xcassets */; };
 		AF6211172AB3C2A10029A1E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF6211152AB3C2A10029A1E1 /* LaunchScreen.storyboard */; };
+		AF62113D2AB3C36D0029A1E1 /* ArtistPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62111F2AB3C36D0029A1E1 /* ArtistPageViewController.swift */; };
+		AF62113E2AB3C36D0029A1E1 /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211202AB3C36D0029A1E1 /* ArtistTableViewCell.swift */; };
+		AF62113F2AB3C36D0029A1E1 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211212AB3C36D0029A1E1 /* PlayerViewController.swift */; };
+		AF6211402AB3C36D0029A1E1 /* ArtistsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211222AB3C36D0029A1E1 /* ArtistsTableViewController.swift */; };
+		AF6211412AB3C36D0029A1E1 /* TracksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211232AB3C36D0029A1E1 /* TracksTableViewController.swift */; };
+		AF6211422AB3C36D0029A1E1 /* TrackTableViewcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211242AB3C36D0029A1E1 /* TrackTableViewcell.swift */; };
+		AF6211432AB3C36D0029A1E1 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211252AB3C36D0029A1E1 /* ChartViewController.swift */; };
+		AF6211442AB3C36D0029A1E1 /* ChartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211272AB3C36D0029A1E1 /* ChartService.swift */; };
+		AF6211452AB3C36D0029A1E1 /* DeezerMusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211282AB3C36D0029A1E1 /* DeezerMusicService.swift */; };
+		AF6211462AB3C36D0029A1E1 /* TracksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211292AB3C36D0029A1E1 /* TracksService.swift */; };
+		AF6211482AB3C36D0029A1E1 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62112C2AB3C36D0029A1E1 /* PlayerViewModel.swift */; };
+		AF6211492AB3C36D0029A1E1 /* TrackCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62112D2AB3C36D0029A1E1 /* TrackCellViewModel.swift */; };
+		AF62114A2AB3C36D0029A1E1 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62112E2AB3C36D0029A1E1 /* ChartViewModel.swift */; };
+		AF62114B2AB3C36D0029A1E1 /* ArtistPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62112F2AB3C36D0029A1E1 /* ArtistPageViewModel.swift */; };
+		AF62114C2AB3C36D0029A1E1 /* ArtistCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211302AB3C36D0029A1E1 /* ArtistCellViewModel.swift */; };
+		AF62114D2AB3C36D0029A1E1 /* MelotunesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211312AB3C36D0029A1E1 /* MelotunesCoordinator.swift */; };
+		AF62114E2AB3C36D0029A1E1 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211332AB3C36D0029A1E1 /* Track.swift */; };
+		AF62114F2AB3C36D0029A1E1 /* DeezerTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211352AB3C36D0029A1E1 /* DeezerTrack.swift */; };
+		AF6211502AB3C36D0029A1E1 /* DeezerArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211362AB3C36D0029A1E1 /* DeezerArtist.swift */; };
+		AF6211512AB3C36D0029A1E1 /* DeezerAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211372AB3C36D0029A1E1 /* DeezerAlbum.swift */; };
+		AF6211522AB3C36D0029A1E1 /* DeezerChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211382AB3C36D0029A1E1 /* DeezerChart.swift */; };
+		AF6211532AB3C36D0029A1E1 /* DeezerTrackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211392AB3C36D0029A1E1 /* DeezerTrackList.swift */; };
+		AF6211542AB3C36D0029A1E1 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62113A2AB3C36D0029A1E1 /* Album.swift */; };
+		AF6211552AB3C36D0029A1E1 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62113B2AB3C36D0029A1E1 /* Artist.swift */; };
+		AF6211562AB3C36D0029A1E1 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62113C2AB3C36D0029A1E1 /* Chart.swift */; };
+		AF62115B2AB3C3DA0029A1E1 /* UIStackView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211582AB3C3DA0029A1E1 /* UIStackView+Helper.swift */; };
+		AF62115C2AB3C3DA0029A1E1 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211592AB3C3DA0029A1E1 /* UIView+Autolayout.swift */; };
+		AF62115D2AB3C3DA0029A1E1 /* UIEdgeInsets+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62115A2AB3C3DA0029A1E1 /* UIEdgeInsets+Convenience.swift */; };
+		AF6211602AB3C3EB0029A1E1 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AF62115F2AB3C3EB0029A1E1 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF6211072AB3C2A00029A1E1 /* Melotunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Melotunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF62110A2AB3C2A00029A1E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF62110C2AB3C2A00029A1E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF62110E2AB3C2A00029A1E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AF6211112AB3C2A00029A1E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF6211132AB3C2A10029A1E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF6211162AB3C2A10029A1E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF6211182AB3C2A10029A1E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF62111F2AB3C36D0029A1E1 /* ArtistPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistPageViewController.swift; sourceTree = "<group>"; };
+		AF6211202AB3C36D0029A1E1 /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
+		AF6211212AB3C36D0029A1E1 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		AF6211222AB3C36D0029A1E1 /* ArtistsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsTableViewController.swift; sourceTree = "<group>"; };
+		AF6211232AB3C36D0029A1E1 /* TracksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksTableViewController.swift; sourceTree = "<group>"; };
+		AF6211242AB3C36D0029A1E1 /* TrackTableViewcell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackTableViewcell.swift; sourceTree = "<group>"; };
+		AF6211252AB3C36D0029A1E1 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		AF6211272AB3C36D0029A1E1 /* ChartService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartService.swift; sourceTree = "<group>"; };
+		AF6211282AB3C36D0029A1E1 /* DeezerMusicService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeezerMusicService.swift; sourceTree = "<group>"; };
+		AF6211292AB3C36D0029A1E1 /* TracksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksService.swift; sourceTree = "<group>"; };
+		AF62112C2AB3C36D0029A1E1 /* PlayerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		AF62112D2AB3C36D0029A1E1 /* TrackCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackCellViewModel.swift; sourceTree = "<group>"; };
+		AF62112E2AB3C36D0029A1E1 /* ChartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		AF62112F2AB3C36D0029A1E1 /* ArtistPageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistPageViewModel.swift; sourceTree = "<group>"; };
+		AF6211302AB3C36D0029A1E1 /* ArtistCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistCellViewModel.swift; sourceTree = "<group>"; };
+		AF6211312AB3C36D0029A1E1 /* MelotunesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MelotunesCoordinator.swift; sourceTree = "<group>"; };
+		AF6211332AB3C36D0029A1E1 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		AF6211352AB3C36D0029A1E1 /* DeezerTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeezerTrack.swift; sourceTree = "<group>"; };
+		AF6211362AB3C36D0029A1E1 /* DeezerArtist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeezerArtist.swift; sourceTree = "<group>"; };
+		AF6211372AB3C36D0029A1E1 /* DeezerAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeezerAlbum.swift; sourceTree = "<group>"; };
+		AF6211382AB3C36D0029A1E1 /* DeezerChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeezerChart.swift; sourceTree = "<group>"; };
+		AF6211392AB3C36D0029A1E1 /* DeezerTrackList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeezerTrackList.swift; sourceTree = "<group>"; };
+		AF62113A2AB3C36D0029A1E1 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		AF62113B2AB3C36D0029A1E1 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		AF62113C2AB3C36D0029A1E1 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		AF6211582AB3C3DA0029A1E1 /* UIStackView+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Helper.swift"; sourceTree = "<group>"; };
+		AF6211592AB3C3DA0029A1E1 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
+		AF62115A2AB3C3DA0029A1E1 /* UIEdgeInsets+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF6211602AB3C3EB0029A1E1 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +110,89 @@
 		AF6211092AB3C2A00029A1E1 /* Melotunes */ = {
 			isa = PBXGroup;
 			children = (
+				AF6211572AB3C39C0029A1E1 /* Helper */,
+				AF6211312AB3C36D0029A1E1 /* MelotunesCoordinator.swift */,
+				AF6211322AB3C36D0029A1E1 /* Model */,
+				AF6211262AB3C36D0029A1E1 /* Service */,
+				AF62111E2AB3C36D0029A1E1 /* ViewController */,
+				AF62112B2AB3C36D0029A1E1 /* ViewModel */,
 				AF62110A2AB3C2A00029A1E1 /* AppDelegate.swift */,
 				AF62110C2AB3C2A00029A1E1 /* SceneDelegate.swift */,
-				AF62110E2AB3C2A00029A1E1 /* ViewController.swift */,
-				AF6211102AB3C2A00029A1E1 /* Main.storyboard */,
 				AF6211132AB3C2A10029A1E1 /* Assets.xcassets */,
 				AF6211152AB3C2A10029A1E1 /* LaunchScreen.storyboard */,
 				AF6211182AB3C2A10029A1E1 /* Info.plist */,
 			);
 			path = Melotunes;
+			sourceTree = "<group>";
+		};
+		AF62111E2AB3C36D0029A1E1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AF62111F2AB3C36D0029A1E1 /* ArtistPageViewController.swift */,
+				AF6211202AB3C36D0029A1E1 /* ArtistTableViewCell.swift */,
+				AF6211212AB3C36D0029A1E1 /* PlayerViewController.swift */,
+				AF6211222AB3C36D0029A1E1 /* ArtistsTableViewController.swift */,
+				AF6211232AB3C36D0029A1E1 /* TracksTableViewController.swift */,
+				AF6211242AB3C36D0029A1E1 /* TrackTableViewcell.swift */,
+				AF6211252AB3C36D0029A1E1 /* ChartViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AF6211262AB3C36D0029A1E1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AF6211282AB3C36D0029A1E1 /* DeezerMusicService.swift */,
+				AF6211272AB3C36D0029A1E1 /* ChartService.swift */,
+				AF6211292AB3C36D0029A1E1 /* TracksService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		AF62112B2AB3C36D0029A1E1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AF62112C2AB3C36D0029A1E1 /* PlayerViewModel.swift */,
+				AF62112D2AB3C36D0029A1E1 /* TrackCellViewModel.swift */,
+				AF62112E2AB3C36D0029A1E1 /* ChartViewModel.swift */,
+				AF62112F2AB3C36D0029A1E1 /* ArtistPageViewModel.swift */,
+				AF6211302AB3C36D0029A1E1 /* ArtistCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AF6211322AB3C36D0029A1E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF6211342AB3C36D0029A1E1 /* Deezer */,
+				AF6211332AB3C36D0029A1E1 /* Track.swift */,
+				AF62113A2AB3C36D0029A1E1 /* Album.swift */,
+				AF62113B2AB3C36D0029A1E1 /* Artist.swift */,
+				AF62113C2AB3C36D0029A1E1 /* Chart.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF6211342AB3C36D0029A1E1 /* Deezer */ = {
+			isa = PBXGroup;
+			children = (
+				AF6211352AB3C36D0029A1E1 /* DeezerTrack.swift */,
+				AF6211362AB3C36D0029A1E1 /* DeezerArtist.swift */,
+				AF6211372AB3C36D0029A1E1 /* DeezerAlbum.swift */,
+				AF6211382AB3C36D0029A1E1 /* DeezerChart.swift */,
+				AF6211392AB3C36D0029A1E1 /* DeezerTrackList.swift */,
+			);
+			path = Deezer;
+			sourceTree = "<group>";
+		};
+		AF6211572AB3C39C0029A1E1 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				AF62115A2AB3C3DA0029A1E1 /* UIEdgeInsets+Convenience.swift */,
+				AF6211582AB3C3DA0029A1E1 /* UIStackView+Helper.swift */,
+				AF6211592AB3C3DA0029A1E1 /* UIView+Autolayout.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +211,9 @@
 			dependencies = (
 			);
 			name = Melotunes;
+			packageProductDependencies = (
+				AF62115F2AB3C3EB0029A1E1 /* SDWebImage */,
+			);
 			productName = Melotunes;
 			productReference = AF6211072AB3C2A00029A1E1 /* Melotunes.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +242,9 @@
 				Base,
 			);
 			mainGroup = AF6210FE2AB3C2A00029A1E1;
+			packageReferences = (
+				AF62115E2AB3C3EB0029A1E1 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = AF6211082AB3C2A00029A1E1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +261,6 @@
 			files = (
 				AF6211172AB3C2A10029A1E1 /* LaunchScreen.storyboard in Resources */,
 				AF6211142AB3C2A10029A1E1 /* Assets.xcassets in Resources */,
-				AF6211122AB3C2A00029A1E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +271,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF62110F2AB3C2A00029A1E1 /* ViewController.swift in Sources */,
+				AF62115D2AB3C3DA0029A1E1 /* UIEdgeInsets+Convenience.swift in Sources */,
+				AF62114B2AB3C36D0029A1E1 /* ArtistPageViewModel.swift in Sources */,
+				AF62115C2AB3C3DA0029A1E1 /* UIView+Autolayout.swift in Sources */,
+				AF6211442AB3C36D0029A1E1 /* ChartService.swift in Sources */,
+				AF62113D2AB3C36D0029A1E1 /* ArtistPageViewController.swift in Sources */,
+				AF6211552AB3C36D0029A1E1 /* Artist.swift in Sources */,
 				AF62110B2AB3C2A00029A1E1 /* AppDelegate.swift in Sources */,
+				AF6211512AB3C36D0029A1E1 /* DeezerAlbum.swift in Sources */,
+				AF6211492AB3C36D0029A1E1 /* TrackCellViewModel.swift in Sources */,
+				AF6211462AB3C36D0029A1E1 /* TracksService.swift in Sources */,
+				AF6211562AB3C36D0029A1E1 /* Chart.swift in Sources */,
+				AF6211412AB3C36D0029A1E1 /* TracksTableViewController.swift in Sources */,
+				AF6211502AB3C36D0029A1E1 /* DeezerArtist.swift in Sources */,
+				AF6211482AB3C36D0029A1E1 /* PlayerViewModel.swift in Sources */,
+				AF6211532AB3C36D0029A1E1 /* DeezerTrackList.swift in Sources */,
+				AF62114D2AB3C36D0029A1E1 /* MelotunesCoordinator.swift in Sources */,
+				AF6211422AB3C36D0029A1E1 /* TrackTableViewcell.swift in Sources */,
+				AF6211542AB3C36D0029A1E1 /* Album.swift in Sources */,
+				AF62113E2AB3C36D0029A1E1 /* ArtistTableViewCell.swift in Sources */,
+				AF6211522AB3C36D0029A1E1 /* DeezerChart.swift in Sources */,
+				AF62114E2AB3C36D0029A1E1 /* Track.swift in Sources */,
+				AF62114F2AB3C36D0029A1E1 /* DeezerTrack.swift in Sources */,
+				AF62114C2AB3C36D0029A1E1 /* ArtistCellViewModel.swift in Sources */,
+				AF6211452AB3C36D0029A1E1 /* DeezerMusicService.swift in Sources */,
+				AF6211432AB3C36D0029A1E1 /* ChartViewController.swift in Sources */,
 				AF62110D2AB3C2A00029A1E1 /* SceneDelegate.swift in Sources */,
+				AF62114A2AB3C36D0029A1E1 /* ChartViewModel.swift in Sources */,
+				AF62115B2AB3C3DA0029A1E1 /* UIStackView+Helper.swift in Sources */,
+				AF6211402AB3C36D0029A1E1 /* ArtistsTableViewController.swift in Sources */,
+				AF62113F2AB3C36D0029A1E1 /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AF6211102AB3C2A00029A1E1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF6211112AB3C2A00029A1E1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AF6211152AB3C2A10029A1E1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +444,7 @@
 				INFOPLIST_FILE = Melotunes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +472,7 @@
 				INFOPLIST_FILE = Melotunes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +510,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AF62115E2AB3C3EB0029A1E1 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AF62115F2AB3C3EB0029A1E1 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF62115E2AB3C3EB0029A1E1 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF6210FF2AB3C2A00029A1E1 /* Project object */;
 }
