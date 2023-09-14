@@ -15,16 +15,10 @@
 - **Artist Profiles**: Select an artist to view their photo and track list.
 
 - **Music Playback**: Choose a track to launch the player and start listening.
+  - Rewind/Fast forward using pan gesture
+  - Infinite playback controlled by a ∞ button
 
 Melotunes focuses on providing a seamless experience for music enthusiasts, allowing you to quickly access and enjoy the latest hits from the top charts with ease.
-
-## Features
-
-- Top Charts: Explore trending artists.
-- Artist Pages: Access artist biographies and discographies.
-- Advanced Music Player:
-  - Rewind/Fast forward using pan gesture
-  - Infinite button-controlled playback  
 
 ## Getting started 
 
