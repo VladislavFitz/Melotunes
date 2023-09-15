@@ -4,13 +4,17 @@ import Combine
 final class ArtistPageViewModel {
   
   @Published
+  var artist: Artist
+  
+  @Published
   var state: State
   
   var title: AnyPublisher<String?, Never>!
   var photoImageURL: AnyPublisher<URL?, Never>!
+  var fansCount: AnyPublisher<Int?, Never>!
 
-  let artist: Artist
-  let service: TracksService
+  let artistService: ArtistService
+  let tracksService: TracksService
   
   var didRequestTrack: ((Int, [Track]) -> Void)?
   var didReceiveError: ((Error) -> Void)?
@@ -29,22 +33,31 @@ final class ArtistPageViewModel {
   }
   
   init(artist: Artist,
-       service: TracksService) {
+       artistService: ArtistService,
+       tracksService: TracksService) {
     self.artist = artist
-    self.service = service
+    self.artistService = artistService
+    self.tracksService = tracksService
     self.state = .initial
-    photoImageURL = Just(artist.imageURL)
+    photoImageURL = $artist
+      .map { $0.imageURL }
       .eraseToAnyPublisher()
-    title = Just(artist.name)
+    title = $artist
+      .map { $0.name }
+      .eraseToAnyPublisher()
+    fansCount = $artist
+      .map { $0.fansCount }
       .eraseToAnyPublisher()
   }
   
-  func fetchTracks() {
+  func fetchData() {
     state = .loading
     Task {
       do {
-        let tracks = try await service.fetchTracks(for: artist)
+        let tracks = try await tracksService.fetchTracks(for: artist)
         self.state = .displayTracks(tracks)
+        let artist = try await artistService.fetchArtist(withID: artist.id)
+        self.artist = artist
       } catch let error {
         self.didReceiveError?(error)
         self.state = .initial
@@ -52,7 +65,7 @@ final class ArtistPageViewModel {
     }
   }
   
-  func select(_ trackIndex: Int) {
+  func selectTrack(atIndex trackIndex: Int) {
     didRequestTrack?(trackIndex, trackList)
   }
   

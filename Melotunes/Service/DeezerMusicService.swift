@@ -1,6 +1,6 @@
 import Foundation
 
-final class DeezerMusicService: ChartService & TracksService {
+final class DeezerMusicService: ChartService & TracksService & ArtistService {
   
   let baseURL: URL
   let session: URLSession
@@ -21,14 +21,20 @@ final class DeezerMusicService: ChartService & TracksService {
   }
   
   func fetchTracks(for artist: Artist) async throws -> [Track] {
-    let artistID = (artist as! DeezerArtist).id
-    var parameters = URLComponents(url: baseURL.appending(path: "/artist/\(artistID)/top"), resolvingAgainstBaseURL: true)!
+    var parameters = URLComponents(url: baseURL.appending(path: "/artist/\(artist.id)/top"), resolvingAgainstBaseURL: true)!
     parameters.queryItems = [
       URLQueryItem(name: "limit", value: "50")
     ]
     let request = URLRequest(url: parameters.url!)
     let (data, _) = try await session.data(for: request)
     return try jsonDecoder.decode(DeezerTrackList.self, from: data).data
+  }
+  
+  func fetchArtist(withID artistID: Int) async throws -> Artist {
+    let url = baseURL.appending(path: "/artist/\(artistID)")
+    let request = URLRequest(url: url)
+    let (data, _) = try await session.data(for: request)
+    return try jsonDecoder.decode(DeezerArtist.self, from: data)
   }
   
 }

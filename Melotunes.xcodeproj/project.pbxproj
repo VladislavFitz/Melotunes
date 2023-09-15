@@ -40,6 +40,7 @@
 		AF62115C2AB3C3DA0029A1E1 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211592AB3C3DA0029A1E1 /* UIView+Autolayout.swift */; };
 		AF62115D2AB3C3DA0029A1E1 /* UIEdgeInsets+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62115A2AB3C3DA0029A1E1 /* UIEdgeInsets+Convenience.swift */; };
 		AF6211602AB3C3EB0029A1E1 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AF62115F2AB3C3EB0029A1E1 /* SDWebImage */; };
+		AFB651B72AB3D32A006B3617 /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB651B62AB3D32A006B3617 /* ArtistService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		AF6211582AB3C3DA0029A1E1 /* UIStackView+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Helper.swift"; sourceTree = "<group>"; };
 		AF6211592AB3C3DA0029A1E1 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
 		AF62115A2AB3C3DA0029A1E1 /* UIEdgeInsets+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Convenience.swift"; sourceTree = "<group>"; };
+		AFB651B62AB3D32A006B3617 /* ArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				AF6211282AB3C36D0029A1E1 /* DeezerMusicService.swift */,
 				AF6211272AB3C36D0029A1E1 /* ChartService.swift */,
 				AF6211292AB3C36D0029A1E1 /* TracksService.swift */,
+				AFB651B62AB3D32A006B3617 /* ArtistService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				AF6211422AB3C36D0029A1E1 /* TrackTableViewcell.swift in Sources */,
 				AF6211542AB3C36D0029A1E1 /* Album.swift in Sources */,
 				AF62113E2AB3C36D0029A1E1 /* ArtistTableViewCell.swift in Sources */,
+				AFB651B72AB3D32A006B3617 /* ArtistService.swift in Sources */,
 				AF6211522AB3C36D0029A1E1 /* DeezerChart.swift in Sources */,
 				AF62114E2AB3C36D0029A1E1 /* Track.swift in Sources */,
 				AF62114F2AB3C36D0029A1E1 /* DeezerTrack.swift in Sources */,
@@ -445,8 +449,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,8 +476,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

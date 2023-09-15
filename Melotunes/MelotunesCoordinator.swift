@@ -31,7 +31,8 @@ final class MelotunesCoordinator {
   func presentArtist(_ artist: Artist, animated: Bool = true) {
     let service = DeezerMusicService()
     let viewModel = ArtistPageViewModel(artist: artist,
-                                    service: service)
+                                        artistService: service,
+                                        tracksService: service)
     viewModel.didReceiveError = { [weak self] error in
       DispatchQueue.main.async {
         self?.presentError(error)
@@ -45,7 +46,7 @@ final class MelotunesCoordinator {
     let viewController = ArtistPageViewController(viewModel: viewModel)
     navigationController.pushViewController(viewController,
                                             animated: animated)
-    viewModel.fetchTracks()
+    viewModel.fetchData()
   }
   
   func presentTrack(atIndex trackIndex: Int,

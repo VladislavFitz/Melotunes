@@ -6,13 +6,15 @@ final class ArtistPageViewController: UIViewController {
   
   private let viewModel: ArtistPageViewModel
   
-  private let pictureImageView: UIImageView
+  private let photoImageView: UIImageView
+  private let infoLabel: UILabel
   private let tracksTableViewController: TracksTableViewController
   
   private var cancellables = Set<AnyCancellable>()
   
   init(viewModel: ArtistPageViewModel) {
-    self.pictureImageView = .init()
+    self.photoImageView = .init()
+    self.infoLabel = UILabel()
     self.tracksTableViewController = TracksTableViewController()
     self.viewModel = viewModel
     super.init(nibName: nil, bundle: nil)
@@ -28,6 +30,7 @@ final class ArtistPageViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = .white
     setupPhotoImageView()
+    setupInfoLabel()
     setupTracksViewController()
     setupBindings()
     setupLayout()
@@ -65,33 +68,55 @@ private extension ArtistPageViewController {
       .store(in: &cancellables)
     viewModel.photoImageURL
       .receive(on: DispatchQueue.main)
-      .sink { [weak pictureImageView] imageURL in
-        pictureImageView?.sd_setImage(with: imageURL)
+      .sink { [weak photoImageView] imageURL in
+        photoImageView?.sd_setImage(with: imageURL)
+      }
+      .store(in: &cancellables)
+    viewModel.fansCount
+      .receive(on: DispatchQueue.main)
+      .sink { [weak infoLabel] fansCount in
+        infoLabel?.text = fansCount.flatMap { "Fans: \($0)" }
       }
       .store(in: &cancellables)
   }
   
   @objc func triggerRefresh() {
-    viewModel.fetchTracks()
+    viewModel.fetchData()
   }
 
   func setupTracksViewController() {
     let refreshControl = UIRefreshControl()
     tracksTableViewController.refreshControl = refreshControl
     refreshControl.addTarget(self, action: #selector(triggerRefresh), for: .valueChanged)
-    tracksTableViewController.tableView.tableHeaderView = pictureImageView
+    let headerView = UIView()
+    headerView.frame = CGRect(x: 0,
+                              y: 0,
+                              width: UIScreen.main.bounds.width,
+                              height: UIScreen.main.bounds.width + 20)
+    headerView.addSubview(photoImageView)
+    headerView.addSubview(infoLabel)
+    photoImageView.frame = CGRect(x: 0,
+                                  y: 0,
+                                  width: UIScreen.main.bounds.width,
+                                  height: UIScreen.main.bounds.width)
+    infoLabel.frame = CGRect(x: 0,
+                             y: UIScreen.main.bounds.width + 4,
+                             width: UIScreen.main.bounds.width,
+                             height: 12)
+    tracksTableViewController.tableView.tableHeaderView = headerView
     tracksTableViewController.didSelect = { [weak self] in
-      self?.viewModel.select($0)
+      self?.viewModel.selectTrack(atIndex: $0)
     }
   }
   
+  func setupInfoLabel() {
+    infoLabel.textAlignment = .center
+    infoLabel.font = .systemFont(ofSize: 14, weight: .heavy)
+  }
+  
   func setupPhotoImageView() {
-    pictureImageView.frame = CGRect(x: 0,
-                                    y: 0,
-                                    width: UIScreen.main.bounds.width,
-                                    height: UIScreen.main.bounds.width)
-    pictureImageView.contentMode = .scaleAspectFit
-    pictureImageView.clipsToBounds = true
+    photoImageView.contentMode = .scaleAspectFit
+    photoImageView.clipsToBounds = true
   }
   
   func setupLayout() {

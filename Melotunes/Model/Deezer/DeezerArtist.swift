@@ -5,15 +5,14 @@ struct DeezerArtist: Decodable, Artist {
   let id: Int
   let name: String
   
+  var fansCount: Int {
+    nb_fan ?? 0
+  }
+  let nb_fan: Int?
+  
   var imageURL: URL {
     picture_xl
   }
   let picture_xl: URL
-  
-  init(id: Int, name: String, imageURL: URL) {
-    self.id = id
-    self.name = name
-    self.picture_xl = imageURL
-  }
   
 }
