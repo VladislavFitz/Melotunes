@@ -112,12 +112,12 @@
 		AF6211092AB3C2A00029A1E1 /* Melotunes */ = {
 			isa = PBXGroup;
 			children = (
-				AF6211572AB3C39C0029A1E1 /* Helper */,
 				AF6211312AB3C36D0029A1E1 /* MelotunesCoordinator.swift */,
 				AF6211322AB3C36D0029A1E1 /* Model */,
 				AF6211262AB3C36D0029A1E1 /* Service */,
 				AF62111E2AB3C36D0029A1E1 /* ViewController */,
 				AF62112B2AB3C36D0029A1E1 /* ViewModel */,
+				AF6211572AB3C39C0029A1E1 /* Helper */,
 				AF62110A2AB3C2A00029A1E1 /* AppDelegate.swift */,
 				AF62110C2AB3C2A00029A1E1 /* SceneDelegate.swift */,
 				AF6211132AB3C2A10029A1E1 /* Assets.xcassets */,

@@ -72,11 +72,9 @@ private extension ArtistPageViewController {
         photoImageView?.sd_setImage(with: imageURL)
       }
       .store(in: &cancellables)
-    viewModel.fansCount
+    viewModel.info
       .receive(on: DispatchQueue.main)
-      .sink { [weak infoLabel] fansCount in
-        infoLabel?.text = fansCount.flatMap { "Fans: \($0)" }
-      }
+      .assign(to: \.text, on: infoLabel)
       .store(in: &cancellables)
   }
   
@@ -111,7 +109,7 @@ private extension ArtistPageViewController {
   
   func setupInfoLabel() {
     infoLabel.textAlignment = .center
-    infoLabel.font = .systemFont(ofSize: 14, weight: .heavy)
+    infoLabel.font = .systemFont(ofSize: 14, weight: .light)
   }
   
   func setupPhotoImageView() {

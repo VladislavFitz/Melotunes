@@ -6,5 +6,6 @@ protocol Artist {
   var name: String { get }
   var imageURL: URL { get }
   var fansCount: Int { get }
+  var albumsCount: Int { get }
   
 }

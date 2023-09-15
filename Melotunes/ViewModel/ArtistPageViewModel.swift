@@ -11,7 +11,7 @@ final class ArtistPageViewModel {
   
   var title: AnyPublisher<String?, Never>!
   var photoImageURL: AnyPublisher<URL?, Never>!
-  var fansCount: AnyPublisher<Int?, Never>!
+  var info: AnyPublisher<String?, Never>!
 
   let artistService: ArtistService
   let tracksService: TracksService
@@ -45,8 +45,10 @@ final class ArtistPageViewModel {
     title = $artist
       .map { $0.name }
       .eraseToAnyPublisher()
-    fansCount = $artist
-      .map { $0.fansCount }
+    info = $artist
+      .map {
+        "Albums: \($0.albumsCount)    Fans: \($0.fansCount)"
+      }
       .eraseToAnyPublisher()
   }
   
@@ -68,5 +70,5 @@ final class ArtistPageViewModel {
   func selectTrack(atIndex trackIndex: Int) {
     didRequestTrack?(trackIndex, trackList)
   }
-  
+    
 }

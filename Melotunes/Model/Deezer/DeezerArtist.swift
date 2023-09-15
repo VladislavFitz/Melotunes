@@ -10,6 +10,11 @@ struct DeezerArtist: Decodable, Artist {
   }
   let nb_fan: Int?
   
+  var albumsCount: Int {
+    nb_album ?? 0
+  }
+  let nb_album: Int?
+  
   var imageURL: URL {
     picture_xl
   }
