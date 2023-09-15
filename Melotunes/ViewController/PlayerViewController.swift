@@ -85,7 +85,7 @@ private extension PlayerViewController {
   
   func setupInfoLabel() {
     infoLabel.font = .systemFont(ofSize: 16)
-    infoLabel.textColor = .tintColor
+    infoLabel.textColor = .systemBlue
   }
   
   func setupButtons() {
