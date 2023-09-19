@@ -12,6 +12,7 @@ final class AlbumViewModel {
   @Published
   var state: State
   
+  var albumTitle: AnyPublisher<String?, Never>!
   var coverImageURL: AnyPublisher<URL?, Never>!
   var artistName: AnyPublisher<String?, Never>!
   var releaseYear: AnyPublisher<String?, Never>!
@@ -29,6 +30,7 @@ final class AlbumViewModel {
     self.error = .init()
     self.state = .initial
     self.coverImageURL = Just(descriptor.coverImageURL).eraseToAnyPublisher()
+    self.albumTitle = Just(descriptor.title).eraseToAnyPublisher()
     self.artistName = $state
       .map { state in
         if case .displayAlbum(let album) = state {

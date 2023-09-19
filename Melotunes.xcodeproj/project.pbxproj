@@ -26,7 +26,7 @@
 		AF62114A2AB3C36D0029A1E1 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62112E2AB3C36D0029A1E1 /* ChartViewModel.swift */; };
 		AF62114B2AB3C36D0029A1E1 /* ArtistPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62112F2AB3C36D0029A1E1 /* ArtistPageViewModel.swift */; };
 		AF62114C2AB3C36D0029A1E1 /* ArtistCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211302AB3C36D0029A1E1 /* ArtistCellViewModel.swift */; };
-		AF62114D2AB3C36D0029A1E1 /* MelotunesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211312AB3C36D0029A1E1 /* MelotunesCoordinator.swift */; };
+		AF62114D2AB3C36D0029A1E1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211312AB3C36D0029A1E1 /* Coordinator.swift */; };
 		AF62114E2AB3C36D0029A1E1 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211332AB3C36D0029A1E1 /* Track.swift */; };
 		AF62114F2AB3C36D0029A1E1 /* DeezerTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211352AB3C36D0029A1E1 /* DeezerTrack.swift */; };
 		AF6211502AB3C36D0029A1E1 /* DeezerArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211362AB3C36D0029A1E1 /* DeezerArtist.swift */; };
@@ -53,6 +53,7 @@
 		AFA3A03C2AB8F4C600CBE5F1 /* PlaybackModePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A03B2AB8F4C600CBE5F1 /* PlaybackModePanel.swift */; };
 		AFA3A03F2AB91E9B00CBE5F1 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A03E2AB91E9B00CBE5F1 /* ViewModelFactory.swift */; };
 		AFA3A0432ABA51EF00CBE5F1 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A0422ABA51EF00CBE5F1 /* ServiceError.swift */; };
+		AFA3A0482ABA57ED00CBE5F1 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A0472ABA57ED00CBE5F1 /* ViewControllerFactory.swift */; };
 		AFB651B72AB3D32A006B3617 /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB651B62AB3D32A006B3617 /* ArtistService.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,7 +79,7 @@
 		AF62112E2AB3C36D0029A1E1 /* ChartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		AF62112F2AB3C36D0029A1E1 /* ArtistPageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistPageViewModel.swift; sourceTree = "<group>"; };
 		AF6211302AB3C36D0029A1E1 /* ArtistCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistCellViewModel.swift; sourceTree = "<group>"; };
-		AF6211312AB3C36D0029A1E1 /* MelotunesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MelotunesCoordinator.swift; sourceTree = "<group>"; };
+		AF6211312AB3C36D0029A1E1 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		AF6211332AB3C36D0029A1E1 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		AF6211352AB3C36D0029A1E1 /* DeezerTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeezerTrack.swift; sourceTree = "<group>"; };
 		AF6211362AB3C36D0029A1E1 /* DeezerArtist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeezerArtist.swift; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 		AFA3A03B2AB8F4C600CBE5F1 /* PlaybackModePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackModePanel.swift; sourceTree = "<group>"; };
 		AFA3A03E2AB91E9B00CBE5F1 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		AFA3A0422ABA51EF00CBE5F1 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		AFA3A0472ABA57ED00CBE5F1 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		AFB651B62AB3D32A006B3617 /* ArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 		AF6211092AB3C2A00029A1E1 /* Melotunes */ = {
 			isa = PBXGroup;
 			children = (
+				AFA3A0442ABA56FA00CBE5F1 /* Deezer */,
 				AFA3A0412AB91F6600CBE5F1 /* Controller */,
 				AFA3A0402AB91F5B00CBE5F1 /* Core */,
 				AF6211322AB3C36D0029A1E1 /* Model */,
@@ -171,7 +174,6 @@
 		AF6211262AB3C36D0029A1E1 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				AF6211282AB3C36D0029A1E1 /* DeezerMusicService.swift */,
 				AFA3A0422ABA51EF00CBE5F1 /* ServiceError.swift */,
 				AF6211272AB3C36D0029A1E1 /* ChartService.swift */,
 				AF6211292AB3C36D0029A1E1 /* TracksService.swift */,
@@ -197,7 +199,6 @@
 		AF6211322AB3C36D0029A1E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AF6211342AB3C36D0029A1E1 /* Deezer */,
 				AF6211332AB3C36D0029A1E1 /* Track.swift */,
 				AF62113A2AB3C36D0029A1E1 /* AlbumDescriptor.swift */,
 				AF62113B2AB3C36D0029A1E1 /* Artist.swift */,
@@ -205,19 +206,6 @@
 				AFA3A02B2AB8385700CBE5F1 /* Album.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		AF6211342AB3C36D0029A1E1 /* Deezer */ = {
-			isa = PBXGroup;
-			children = (
-				AF6211352AB3C36D0029A1E1 /* DeezerTrack.swift */,
-				AF6211362AB3C36D0029A1E1 /* DeezerArtist.swift */,
-				AF6211372AB3C36D0029A1E1 /* DeezerAlbumDescriptor.swift */,
-				AF6211382AB3C36D0029A1E1 /* DeezerChart.swift */,
-				AFA3A02D2AB838C600CBE5F1 /* DeezerAlbum.swift */,
-				AF6211392AB3C36D0029A1E1 /* DeezerTrackList.swift */,
-			);
-			path = Deezer;
 			sourceTree = "<group>";
 		};
 		AF6211572AB3C39C0029A1E1 /* Helper */ = {
@@ -247,8 +235,9 @@
 		AFA3A0402AB91F5B00CBE5F1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AF6211312AB3C36D0029A1E1 /* MelotunesCoordinator.swift */,
+				AF6211312AB3C36D0029A1E1 /* Coordinator.swift */,
 				AFA3A03E2AB91E9B00CBE5F1 /* ViewModelFactory.swift */,
+				AFA3A0472ABA57ED00CBE5F1 /* ViewControllerFactory.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -259,6 +248,36 @@
 				AFA3A02F2AB8507A00CBE5F1 /* PlayerController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		AFA3A0442ABA56FA00CBE5F1 /* Deezer */ = {
+			isa = PBXGroup;
+			children = (
+				AFA3A0462ABA570600CBE5F1 /* Service */,
+				AFA3A0452ABA570100CBE5F1 /* Model */,
+			);
+			path = Deezer;
+			sourceTree = "<group>";
+		};
+		AFA3A0452ABA570100CBE5F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF6211352AB3C36D0029A1E1 /* DeezerTrack.swift */,
+				AF6211362AB3C36D0029A1E1 /* DeezerArtist.swift */,
+				AF6211372AB3C36D0029A1E1 /* DeezerAlbumDescriptor.swift */,
+				AF6211382AB3C36D0029A1E1 /* DeezerChart.swift */,
+				AFA3A02D2AB838C600CBE5F1 /* DeezerAlbum.swift */,
+				AF6211392AB3C36D0029A1E1 /* DeezerTrackList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AFA3A0462ABA570600CBE5F1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AF6211282AB3C36D0029A1E1 /* DeezerMusicService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,9 +377,10 @@
 				AF6211562AB3C36D0029A1E1 /* Chart.swift in Sources */,
 				AF6211412AB3C36D0029A1E1 /* TracksTableViewController.swift in Sources */,
 				AF6211502AB3C36D0029A1E1 /* DeezerArtist.swift in Sources */,
+				AFA3A0482ABA57ED00CBE5F1 /* ViewControllerFactory.swift in Sources */,
 				AF6211482AB3C36D0029A1E1 /* PlayerViewModel.swift in Sources */,
 				AF6211532AB3C36D0029A1E1 /* DeezerTrackList.swift in Sources */,
-				AF62114D2AB3C36D0029A1E1 /* MelotunesCoordinator.swift in Sources */,
+				AF62114D2AB3C36D0029A1E1 /* Coordinator.swift in Sources */,
 				AF6211422AB3C36D0029A1E1 /* TrackTableViewcell.swift in Sources */,
 				AF6211542AB3C36D0029A1E1 /* AlbumDescriptor.swift in Sources */,
 				AFA3A03F2AB91E9B00CBE5F1 /* ViewModelFactory.swift in Sources */,

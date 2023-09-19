@@ -2,17 +2,20 @@ import Foundation
 import UIKit
 import Combine
 
-final class MelotunesCoordinator {
+final class Coordinator {
   
   let navigationController: UINavigationController
   let viewModelFactory: ViewModelFactory
+  let viewControllerFactory: ViewControllerFactory
   
   private var cancellables: Set<AnyCancellable>
   
   init(navigationController: UINavigationController,
-       viewModelFactory: ViewModelFactory) {
+       viewModelFactory: ViewModelFactory,
+       viewControllerFactory: ViewControllerFactory) {
     self.navigationController = navigationController
     self.viewModelFactory = viewModelFactory
+    self.viewControllerFactory = viewControllerFactory
     self.cancellables = []
   }
   
@@ -30,7 +33,7 @@ final class MelotunesCoordinator {
         self?.presentArtist(artist)
       }
       .store(in: &cancellables)
-    let viewController = СhartViewController(viewModel: viewModel)
+    let viewController = viewControllerFactory.chartViewController(with: viewModel)
     navigationController.pushViewController(viewController,
                                             animated: false)
     viewModel.fetchChart()
@@ -38,7 +41,6 @@ final class MelotunesCoordinator {
   
   func presentArtist(_ artist: Artist, animated: Bool = true) {
     let viewModel = viewModelFactory.artistPageViewModel(for: artist)
-    
     viewModel.error
       .receive(on: DispatchQueue.main)
       .sink { [weak self] error in
@@ -53,7 +55,7 @@ final class MelotunesCoordinator {
                            of: artist)
       }
       .store(in: &cancellables)
-    let viewController = ArtistPageViewController(viewModel: viewModel)
+    let viewController = viewControllerFactory.artistPageViewController(with: viewModel)
     navigationController.pushViewController(viewController,
                                             animated: animated)
     viewModel.fetchData()
@@ -76,8 +78,7 @@ final class MelotunesCoordinator {
       }
       .store(in: &cancellables)
     
-    let viewController = AlbumViewController(viewModel: viewModel)
-    viewController.title = album.title
+    let viewController = viewControllerFactory.albumViewController(with: viewModel)
     if navigationController.presentedViewController != nil {
       navigationController.presentedViewController?.dismiss(animated: animated) {
         self.navigationController.pushViewController(viewController, animated: true)
@@ -98,19 +99,15 @@ final class MelotunesCoordinator {
         self?.presentAlbum(album, of: artist)
       }
       .store(in: &cancellables)
-    let viewController = PlayerViewController(viewModel: viewModel)
+    let viewController = viewControllerFactory.playerViewController(with: viewModel)
     navigationController.present(viewController,
                                  animated: animated)
     viewModel.playCurrentTrack()
   }
   
   func presentError(_ error: Error, animated: Bool = true) {
-    let alertController = UIAlertController(title: "Error occured",
-                                            message: error.localizedDescription,
-                                            preferredStyle: .alert)
-    alertController.addAction(UIAlertAction(title: "OK",
-                                            style: .cancel))
-    navigationController.present(alertController,
+    let errorViewController = viewControllerFactory.errorViewController(for: error)
+    navigationController.present(errorViewController,
                                  animated: animated)
   }
   

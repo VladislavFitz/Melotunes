@@ -80,6 +80,13 @@ private extension AlbumViewController {
       }
       .store(in: &cancellables)
     
+    viewModel.albumTitle
+      .receive(on: DispatchQueue.main)
+      .sink { [weak self] albumTitle in
+        self?.title = albumTitle
+      }
+      .store(in: &cancellables)
+    
     viewModel.coverImageURL
       .receive(on: DispatchQueue.main)
       .sink { [weak headerView] imageURL in
