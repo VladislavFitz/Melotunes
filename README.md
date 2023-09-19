@@ -3,20 +3,23 @@
 ## Overview
 
 <p float="left">
-    <img src="Resources/screen1.png" alt="1" width = 192px height = 384px >
+    <img src="Resources/screen1.png" alt="1" width = 192px height = 384px>
     <img src="Resources/screen2.png" alt="2" width = 192px height = 384px>
     <img src="Resources/screen3.png" alt="3" width = 192px height = 384px>
+    <img src="Resources/screen4.png" alt="4" width = 192px height = 384px>
 </p>
 
-**Melotunes** is a music player app that simplifies the enjoyment of music from the top charts:
+**Melotunes** is a music player app that simplifies the enjoyment of music from the Deezer top charts:
 
 - **Discover Top Artists**: Explore a curated list of artists featured in the top charts.
 
-- **Artist Profiles**: Select an artist to view their photo and track list.
+- **Artist Profiles**: Select an artist to view their photo, data and track list.
 
-- **Music Playback**: Choose a track to launch the player and start listening.
-  - Rewind/Fast forward using pan gesture
-  - Infinite playback controlled by a ∞ button
+- **Album View**: Explore complete albums, view artwork, and access track listings by selecting an album's name in the player view.
+
+- **Music Player**: Choose a track to launch the player and start listening.
+  - Rewind/Fast forward using gestures
+  - Different playback modes (shuffle, repeat)
 
 Melotunes focuses on providing a seamless experience for music enthusiasts, allowing you to quickly access and enjoy the latest hits from the top charts with ease.
 
