@@ -11,14 +11,13 @@ final class ArtistPageViewModel {
   
   var title: AnyPublisher<String?, Never>!
   var photoImageURL: AnyPublisher<URL?, Never>!
-  var info: AnyPublisher<String?, Never>!
 
   let artistService: ArtistService
   let tracksService: TracksService
   
-  var didRequestTrack: ((Int, [Track]) -> Void)?
-  var didReceiveError: ((Error) -> Void)?
-
+  var requestTrack: PassthroughSubject<(Int, [Track]), Never>
+  var error: PassthroughSubject<Error, Never>
+  
   enum State {
     case initial
     case loading
@@ -39,16 +38,13 @@ final class ArtistPageViewModel {
     self.artistService = artistService
     self.tracksService = tracksService
     self.state = .initial
+    self.requestTrack = .init()
+    self.error = .init()
     photoImageURL = $artist
       .map { $0.imageURL }
       .eraseToAnyPublisher()
     title = $artist
       .map { $0.name }
-      .eraseToAnyPublisher()
-    info = $artist
-      .map {
-        "Albums: \($0.albumsCount)    Fans: \($0.fansCount)"
-      }
       .eraseToAnyPublisher()
   }
   
@@ -61,14 +57,14 @@ final class ArtistPageViewModel {
         let artist = try await artistService.fetchArtist(withID: artist.id)
         self.artist = artist
       } catch let error {
-        self.didReceiveError?(error)
+        self.error.send(error)
         self.state = .initial
       }
     }
   }
   
   func selectTrack(atIndex trackIndex: Int) {
-    didRequestTrack?(trackIndex, trackList)
+    requestTrack.send((trackIndex, trackList))
   }
     
 }

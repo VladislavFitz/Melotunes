@@ -30,16 +30,28 @@
 		AF62114E2AB3C36D0029A1E1 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211332AB3C36D0029A1E1 /* Track.swift */; };
 		AF62114F2AB3C36D0029A1E1 /* DeezerTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211352AB3C36D0029A1E1 /* DeezerTrack.swift */; };
 		AF6211502AB3C36D0029A1E1 /* DeezerArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211362AB3C36D0029A1E1 /* DeezerArtist.swift */; };
-		AF6211512AB3C36D0029A1E1 /* DeezerAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211372AB3C36D0029A1E1 /* DeezerAlbum.swift */; };
+		AF6211512AB3C36D0029A1E1 /* DeezerAlbumDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211372AB3C36D0029A1E1 /* DeezerAlbumDescriptor.swift */; };
 		AF6211522AB3C36D0029A1E1 /* DeezerChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211382AB3C36D0029A1E1 /* DeezerChart.swift */; };
 		AF6211532AB3C36D0029A1E1 /* DeezerTrackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211392AB3C36D0029A1E1 /* DeezerTrackList.swift */; };
-		AF6211542AB3C36D0029A1E1 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62113A2AB3C36D0029A1E1 /* Album.swift */; };
+		AF6211542AB3C36D0029A1E1 /* AlbumDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62113A2AB3C36D0029A1E1 /* AlbumDescriptor.swift */; };
 		AF6211552AB3C36D0029A1E1 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62113B2AB3C36D0029A1E1 /* Artist.swift */; };
 		AF6211562AB3C36D0029A1E1 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62113C2AB3C36D0029A1E1 /* Chart.swift */; };
 		AF62115B2AB3C3DA0029A1E1 /* UIStackView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211582AB3C3DA0029A1E1 /* UIStackView+Helper.swift */; };
 		AF62115C2AB3C3DA0029A1E1 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6211592AB3C3DA0029A1E1 /* UIView+Autolayout.swift */; };
 		AF62115D2AB3C3DA0029A1E1 /* UIEdgeInsets+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62115A2AB3C3DA0029A1E1 /* UIEdgeInsets+Convenience.swift */; };
 		AF6211602AB3C3EB0029A1E1 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AF62115F2AB3C3EB0029A1E1 /* SDWebImage */; };
+		AFA3A0282AB836A600CBE5F1 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A0272AB836A600CBE5F1 /* AlbumViewController.swift */; };
+		AFA3A02A2AB8376700CBE5F1 /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A0292AB8376700CBE5F1 /* AlbumService.swift */; };
+		AFA3A02C2AB8385700CBE5F1 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A02B2AB8385700CBE5F1 /* Album.swift */; };
+		AFA3A02E2AB838C600CBE5F1 /* DeezerAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A02D2AB838C600CBE5F1 /* DeezerAlbum.swift */; };
+		AFA3A0302AB8507A00CBE5F1 /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A02F2AB8507A00CBE5F1 /* PlayerController.swift */; };
+		AFA3A0322AB86C8B00CBE5F1 /* AlbumHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A0312AB86C8B00CBE5F1 /* AlbumHeaderView.swift */; };
+		AFA3A0342AB86DB900CBE5F1 /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A0332AB86DB900CBE5F1 /* AlbumViewModel.swift */; };
+		AFA3A0362AB8F0C600CBE5F1 /* ArtistPageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A0352AB8F0C600CBE5F1 /* ArtistPageHeaderView.swift */; };
+		AFA3A0382AB8F40400CBE5F1 /* PlaybackProgressPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A0372AB8F40400CBE5F1 /* PlaybackProgressPanel.swift */; };
+		AFA3A03A2AB8F4AA00CBE5F1 /* PlaybackControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A0392AB8F4AA00CBE5F1 /* PlaybackControlPanel.swift */; };
+		AFA3A03C2AB8F4C600CBE5F1 /* PlaybackModePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A03B2AB8F4C600CBE5F1 /* PlaybackModePanel.swift */; };
+		AFA3A03F2AB91E9B00CBE5F1 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A03E2AB91E9B00CBE5F1 /* ViewModelFactory.swift */; };
 		AFB651B72AB3D32A006B3617 /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB651B62AB3D32A006B3617 /* ArtistService.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,15 +81,27 @@
 		AF6211332AB3C36D0029A1E1 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		AF6211352AB3C36D0029A1E1 /* DeezerTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeezerTrack.swift; sourceTree = "<group>"; };
 		AF6211362AB3C36D0029A1E1 /* DeezerArtist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeezerArtist.swift; sourceTree = "<group>"; };
-		AF6211372AB3C36D0029A1E1 /* DeezerAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeezerAlbum.swift; sourceTree = "<group>"; };
+		AF6211372AB3C36D0029A1E1 /* DeezerAlbumDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeezerAlbumDescriptor.swift; sourceTree = "<group>"; };
 		AF6211382AB3C36D0029A1E1 /* DeezerChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeezerChart.swift; sourceTree = "<group>"; };
 		AF6211392AB3C36D0029A1E1 /* DeezerTrackList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeezerTrackList.swift; sourceTree = "<group>"; };
-		AF62113A2AB3C36D0029A1E1 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		AF62113A2AB3C36D0029A1E1 /* AlbumDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDescriptor.swift; sourceTree = "<group>"; };
 		AF62113B2AB3C36D0029A1E1 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		AF62113C2AB3C36D0029A1E1 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		AF6211582AB3C3DA0029A1E1 /* UIStackView+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Helper.swift"; sourceTree = "<group>"; };
 		AF6211592AB3C3DA0029A1E1 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
 		AF62115A2AB3C3DA0029A1E1 /* UIEdgeInsets+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Convenience.swift"; sourceTree = "<group>"; };
+		AFA3A0272AB836A600CBE5F1 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		AFA3A0292AB8376700CBE5F1 /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
+		AFA3A02B2AB8385700CBE5F1 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		AFA3A02D2AB838C600CBE5F1 /* DeezerAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeezerAlbum.swift; sourceTree = "<group>"; };
+		AFA3A02F2AB8507A00CBE5F1 /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
+		AFA3A0312AB86C8B00CBE5F1 /* AlbumHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumHeaderView.swift; sourceTree = "<group>"; };
+		AFA3A0332AB86DB900CBE5F1 /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
+		AFA3A0352AB8F0C600CBE5F1 /* ArtistPageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistPageHeaderView.swift; sourceTree = "<group>"; };
+		AFA3A0372AB8F40400CBE5F1 /* PlaybackProgressPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackProgressPanel.swift; sourceTree = "<group>"; };
+		AFA3A0392AB8F4AA00CBE5F1 /* PlaybackControlPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackControlPanel.swift; sourceTree = "<group>"; };
+		AFA3A03B2AB8F4C600CBE5F1 /* PlaybackModePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackModePanel.swift; sourceTree = "<group>"; };
+		AFA3A03E2AB91E9B00CBE5F1 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		AFB651B62AB3D32A006B3617 /* ArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,9 +136,11 @@
 		AF6211092AB3C2A00029A1E1 /* Melotunes */ = {
 			isa = PBXGroup;
 			children = (
-				AF6211312AB3C36D0029A1E1 /* MelotunesCoordinator.swift */,
+				AFA3A0412AB91F6600CBE5F1 /* Controller */,
+				AFA3A0402AB91F5B00CBE5F1 /* Core */,
 				AF6211322AB3C36D0029A1E1 /* Model */,
 				AF6211262AB3C36D0029A1E1 /* Service */,
+				AFA3A03D2AB91CB400CBE5F1 /* View */,
 				AF62111E2AB3C36D0029A1E1 /* ViewController */,
 				AF62112B2AB3C36D0029A1E1 /* ViewModel */,
 				AF6211572AB3C39C0029A1E1 /* Helper */,
@@ -131,12 +157,11 @@
 			isa = PBXGroup;
 			children = (
 				AF62111F2AB3C36D0029A1E1 /* ArtistPageViewController.swift */,
-				AF6211202AB3C36D0029A1E1 /* ArtistTableViewCell.swift */,
 				AF6211212AB3C36D0029A1E1 /* PlayerViewController.swift */,
 				AF6211222AB3C36D0029A1E1 /* ArtistsTableViewController.swift */,
 				AF6211232AB3C36D0029A1E1 /* TracksTableViewController.swift */,
-				AF6211242AB3C36D0029A1E1 /* TrackTableViewcell.swift */,
 				AF6211252AB3C36D0029A1E1 /* ChartViewController.swift */,
+				AFA3A0272AB836A600CBE5F1 /* AlbumViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -148,6 +173,7 @@
 				AF6211272AB3C36D0029A1E1 /* ChartService.swift */,
 				AF6211292AB3C36D0029A1E1 /* TracksService.swift */,
 				AFB651B62AB3D32A006B3617 /* ArtistService.swift */,
+				AFA3A0292AB8376700CBE5F1 /* AlbumService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -158,6 +184,7 @@
 				AF62112C2AB3C36D0029A1E1 /* PlayerViewModel.swift */,
 				AF62112D2AB3C36D0029A1E1 /* TrackCellViewModel.swift */,
 				AF62112E2AB3C36D0029A1E1 /* ChartViewModel.swift */,
+				AFA3A0332AB86DB900CBE5F1 /* AlbumViewModel.swift */,
 				AF62112F2AB3C36D0029A1E1 /* ArtistPageViewModel.swift */,
 				AF6211302AB3C36D0029A1E1 /* ArtistCellViewModel.swift */,
 			);
@@ -169,9 +196,10 @@
 			children = (
 				AF6211342AB3C36D0029A1E1 /* Deezer */,
 				AF6211332AB3C36D0029A1E1 /* Track.swift */,
-				AF62113A2AB3C36D0029A1E1 /* Album.swift */,
+				AF62113A2AB3C36D0029A1E1 /* AlbumDescriptor.swift */,
 				AF62113B2AB3C36D0029A1E1 /* Artist.swift */,
 				AF62113C2AB3C36D0029A1E1 /* Chart.swift */,
+				AFA3A02B2AB8385700CBE5F1 /* Album.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,8 +209,9 @@
 			children = (
 				AF6211352AB3C36D0029A1E1 /* DeezerTrack.swift */,
 				AF6211362AB3C36D0029A1E1 /* DeezerArtist.swift */,
-				AF6211372AB3C36D0029A1E1 /* DeezerAlbum.swift */,
+				AF6211372AB3C36D0029A1E1 /* DeezerAlbumDescriptor.swift */,
 				AF6211382AB3C36D0029A1E1 /* DeezerChart.swift */,
+				AFA3A02D2AB838C600CBE5F1 /* DeezerAlbum.swift */,
 				AF6211392AB3C36D0029A1E1 /* DeezerTrackList.swift */,
 			);
 			path = Deezer;
@@ -196,6 +225,37 @@
 				AF6211592AB3C3DA0029A1E1 /* UIView+Autolayout.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		AFA3A03D2AB91CB400CBE5F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AFA3A03B2AB8F4C600CBE5F1 /* PlaybackModePanel.swift */,
+				AFA3A0372AB8F40400CBE5F1 /* PlaybackProgressPanel.swift */,
+				AFA3A0392AB8F4AA00CBE5F1 /* PlaybackControlPanel.swift */,
+				AFA3A0312AB86C8B00CBE5F1 /* AlbumHeaderView.swift */,
+				AFA3A0352AB8F0C600CBE5F1 /* ArtistPageHeaderView.swift */,
+				AF6211242AB3C36D0029A1E1 /* TrackTableViewcell.swift */,
+				AF6211202AB3C36D0029A1E1 /* ArtistTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AFA3A0402AB91F5B00CBE5F1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AF6211312AB3C36D0029A1E1 /* MelotunesCoordinator.swift */,
+				AFA3A03E2AB91E9B00CBE5F1 /* ViewModelFactory.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AFA3A0412AB91F6600CBE5F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AFA3A02F2AB8507A00CBE5F1 /* PlayerController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,12 +336,20 @@
 			files = (
 				AF62115D2AB3C3DA0029A1E1 /* UIEdgeInsets+Convenience.swift in Sources */,
 				AF62114B2AB3C36D0029A1E1 /* ArtistPageViewModel.swift in Sources */,
+				AFA3A0342AB86DB900CBE5F1 /* AlbumViewModel.swift in Sources */,
+				AFA3A0302AB8507A00CBE5F1 /* PlayerController.swift in Sources */,
+				AFA3A03C2AB8F4C600CBE5F1 /* PlaybackModePanel.swift in Sources */,
 				AF62115C2AB3C3DA0029A1E1 /* UIView+Autolayout.swift in Sources */,
+				AFA3A02C2AB8385700CBE5F1 /* Album.swift in Sources */,
 				AF6211442AB3C36D0029A1E1 /* ChartService.swift in Sources */,
+				AFA3A0362AB8F0C600CBE5F1 /* ArtistPageHeaderView.swift in Sources */,
+				AFA3A0282AB836A600CBE5F1 /* AlbumViewController.swift in Sources */,
 				AF62113D2AB3C36D0029A1E1 /* ArtistPageViewController.swift in Sources */,
+				AFA3A0382AB8F40400CBE5F1 /* PlaybackProgressPanel.swift in Sources */,
+				AFA3A0322AB86C8B00CBE5F1 /* AlbumHeaderView.swift in Sources */,
 				AF6211552AB3C36D0029A1E1 /* Artist.swift in Sources */,
 				AF62110B2AB3C2A00029A1E1 /* AppDelegate.swift in Sources */,
-				AF6211512AB3C36D0029A1E1 /* DeezerAlbum.swift in Sources */,
+				AF6211512AB3C36D0029A1E1 /* DeezerAlbumDescriptor.swift in Sources */,
 				AF6211492AB3C36D0029A1E1 /* TrackCellViewModel.swift in Sources */,
 				AF6211462AB3C36D0029A1E1 /* TracksService.swift in Sources */,
 				AF6211562AB3C36D0029A1E1 /* Chart.swift in Sources */,
@@ -291,17 +359,21 @@
 				AF6211532AB3C36D0029A1E1 /* DeezerTrackList.swift in Sources */,
 				AF62114D2AB3C36D0029A1E1 /* MelotunesCoordinator.swift in Sources */,
 				AF6211422AB3C36D0029A1E1 /* TrackTableViewcell.swift in Sources */,
-				AF6211542AB3C36D0029A1E1 /* Album.swift in Sources */,
+				AF6211542AB3C36D0029A1E1 /* AlbumDescriptor.swift in Sources */,
+				AFA3A03F2AB91E9B00CBE5F1 /* ViewModelFactory.swift in Sources */,
 				AF62113E2AB3C36D0029A1E1 /* ArtistTableViewCell.swift in Sources */,
 				AFB651B72AB3D32A006B3617 /* ArtistService.swift in Sources */,
+				AFA3A02E2AB838C600CBE5F1 /* DeezerAlbum.swift in Sources */,
 				AF6211522AB3C36D0029A1E1 /* DeezerChart.swift in Sources */,
 				AF62114E2AB3C36D0029A1E1 /* Track.swift in Sources */,
 				AF62114F2AB3C36D0029A1E1 /* DeezerTrack.swift in Sources */,
 				AF62114C2AB3C36D0029A1E1 /* ArtistCellViewModel.swift in Sources */,
 				AF6211452AB3C36D0029A1E1 /* DeezerMusicService.swift in Sources */,
+				AFA3A02A2AB8376700CBE5F1 /* AlbumService.swift in Sources */,
 				AF6211432AB3C36D0029A1E1 /* ChartViewController.swift in Sources */,
 				AF62110D2AB3C2A00029A1E1 /* SceneDelegate.swift in Sources */,
 				AF62114A2AB3C36D0029A1E1 /* ChartViewModel.swift in Sources */,
+				AFA3A03A2AB8F4AA00CBE5F1 /* PlaybackControlPanel.swift in Sources */,
 				AF62115B2AB3C3DA0029A1E1 /* UIStackView+Helper.swift in Sources */,
 				AF6211402AB3C36D0029A1E1 /* ArtistsTableViewController.swift in Sources */,
 				AF62113F2AB3C36D0029A1E1 /* PlayerViewController.swift in Sources */,

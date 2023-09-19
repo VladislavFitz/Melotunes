@@ -14,14 +14,16 @@ final class ChartViewModel {
   
   var title: AnyPublisher<String?, Never>!
   
-  var didRequestArtistPage: ((Artist) -> Void)?
-  var didReceiveError: ((Error) -> Void)?
-  
+  var requestArtist: PassthroughSubject<Artist, Never>
+  var error: PassthroughSubject<Error, Never>
+
   private let service: ChartService
   
   init(service: ChartService) {
     self.state = .initial
     self.service = service
+    self.requestArtist = .init()
+    self.error = .init()
     title = Just("Top Artists")
       .eraseToAnyPublisher()
   }
@@ -33,7 +35,7 @@ final class ChartViewModel {
         let chart = try await service.fetchChart()
         self.state = .displayChart(chart)
       } catch let error {
-        self.didReceiveError?(error)
+        self.error.send(error)
         self.state = .initial
       }
     }
@@ -41,7 +43,7 @@ final class ChartViewModel {
   
   func selectArtist(atIndex index: Int) {
     if case .displayChart(let chart) = state {
-      didRequestArtistPage?(chart.items[index])
+      requestArtist.send(chart.items[index])
     }
   }
   

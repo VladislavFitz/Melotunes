@@ -11,7 +11,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let window = UIWindow(windowScene: windowScene)
     let navigationController = UINavigationController()
     navigationController.navigationBar.prefersLargeTitles = true
-    coordinator = MelotunesCoordinator(navigationController: navigationController)
+    let viewModelFactory = ViewModelFactory(playerController: PlayerController(),
+                                            musicService: DeezerMusicService())
+    coordinator = MelotunesCoordinator(navigationController: navigationController,
+                                       viewModelFactory: viewModelFactory)
     window.rootViewController = navigationController
     self.window = window
     window.makeKeyAndVisible()

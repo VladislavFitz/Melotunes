@@ -1,6 +1,5 @@
 import Foundation
 import Combine
-import AVFoundation
 
 final class PlayerViewModel {
   
@@ -14,13 +13,16 @@ final class PlayerViewModel {
   var currentTrackIndex: Int
   
   @Published
-  var absoluteProgress: TimeInterval
-  
-  @Published
   var playbackState: PlaybackState
   
   @Published
-  var isInfinitePlaybackOn: Bool
+  var isShuffleOn: Bool
+  
+  @Published
+  var repeatMode: RepeatMode
+
+  private let formatter: DateComponentsFormatter
+  private let playerController: PlayerController
   
   var currentTrack: AnyPublisher<Track?, Never>!
   
@@ -38,12 +40,17 @@ final class PlayerViewModel {
   
   var duration: AnyPublisher<TimeInterval, Never>!
   
+  var requestAlbum: PassthroughSubject<AlbumDescriptor, Never>
+  
+  private var cancellables: Set<AnyCancellable>
+  
   enum Action {
     case backward
     case playPause
     case forward
     case select(Float)
     case toggleInfinitePlayback
+    case tapAlbum
   }
   
   enum PlaybackState {
@@ -59,25 +66,26 @@ final class PlayerViewModel {
       }
     }
   }
-    
-  private let player: AVPlayer
   
-  private let formatter: DateComponentsFormatter
-
-  private var timeObserverToken: Any?
-  private var itemDidPlayToEndToken: Any?
+  enum RepeatMode {
+    case off
+    case on(single: Bool)
+  }
   
   init(artist: Artist,
        tracks: [Track],
-       currentTrackIndex: Int) {
+       currentTrackIndex: Int,
+       playerController: PlayerController) {
     self.tracks = tracks
     self.currentTrackIndex = currentTrackIndex
     self.artist = artist
     self.formatter = .init()
-    self.player = .init()
-    self.isInfinitePlaybackOn = true
-    self.absoluteProgress = 0
-    self.playbackState = .pause
+    self.playerController = playerController
+    self.playbackState = playerController.isPlaying ? .playing : .pause
+    self.requestAlbum = .init()
+    self.cancellables = []
+    self.repeatMode = .off
+    self.isShuffleOn = false
     setupFormatter()
     setupPublishers()
   }
@@ -85,36 +93,53 @@ final class PlayerViewModel {
   func perform(_ action: Action) {
     switch action {
     case .forward:
-      playNextTrack()
+      playNextTrack(forced: true)
     case .playPause:
       switch playbackState {
       case .pause:
-        if player.currentItem == nil {
-          playCurrentTrack()
+        if playerController.hasItem && !playerController.isPlaying {
+          playerController.play()
         } else {
-          player.play()
+          playCurrentTrack()
         }
-        playbackState.toggle()
       case .playing:
-        player.pause()
-        playbackState.toggle()
+        playerController.pause()
       }
+      playbackState.toggle()
     case .backward:
       let prevTrackIndex = currentTrackIndex == 0 ? tracks.endIndex - 1 : currentTrackIndex-1
       currentTrackIndex = prevTrackIndex
       playCurrentTrack()
     case .select(let progress):
-      let interval = CMTime(seconds: 30 * Double(progress),
-                            preferredTimescale: CMTimeScale(NSEC_PER_SEC))
-      player.seek(to: interval)
+      playerController.setRelativeProgress(progress)
     case .toggleInfinitePlayback:
-      isInfinitePlaybackOn.toggle()
+      isShuffleOn.toggle()
+    case .tapAlbum:
+      requestAlbum.send(tracks[currentTrackIndex].sourceAlbum)
     }
   }
   
-  deinit {
-    timeObserverToken.flatMap(player.removeTimeObserver)
-    itemDidPlayToEndToken.flatMap(NotificationCenter.default.removeObserver)
+  func playCurrentTrack() {
+    if tracks.isEmpty {
+      return
+    }
+    playbackState = .playing
+    playerController.setItem(withURL: tracks[currentTrackIndex].previewURL)
+  }
+  
+  func toggleRepeat() {
+    switch repeatMode {
+    case .off:
+      repeatMode = .on(single: false)
+    case .on(single: false):
+      repeatMode = .on(single: true)
+    case .on(single: true):
+      repeatMode = .off
+    }
+  }
+  
+  func toggleShuffle() {
+    isShuffleOn.toggle()
   }
   
 }
@@ -137,7 +162,7 @@ private extension PlayerViewModel {
       .map(\.?.sourceAlbum.coverImageURL)
       .eraseToAnyPublisher()
     
-    relativeProgress = $absoluteProgress
+    relativeProgress = playerController.$absoluteProgress
       .combineLatest(duration)
       .map { progress, duration in
         Float(progress / duration)
@@ -154,30 +179,28 @@ private extension PlayerViewModel {
         "\(artist.name)\(track.flatMap { " – \($0.sourceAlbum.title)"} ?? "")"
       }
       .eraseToAnyPublisher()
-
-    let interval = CMTime(seconds: 0.1,
-                          preferredTimescale: CMTimeScale(NSEC_PER_SEC))
-    timeObserverToken =
-        player.addPeriodicTimeObserver(forInterval: interval, queue: .main) {
-            [weak self] time in
-          guard let self else { return }
-          self.absoluteProgress = time.seconds
-    }
     
-    timeLeft = $absoluteProgress
+    timeLeft = playerController.$absoluteProgress
       .combineLatest(duration)
       .map { [weak self] progress, duration in
         guard let self else { return nil }
-        return "-\(self.formatter.string(from: duration - progress)!)"
+        return "-\(formatter.string(from: duration - progress)!)"
       }
       .eraseToAnyPublisher()
     
-    elapsedTime = $absoluteProgress
+    elapsedTime = playerController.$absoluteProgress
       .map { [weak self] progress in
         guard let self else { return nil }
         return "\(formatter.string(from: progress)!)"
       }
       .eraseToAnyPublisher()
+    
+    playerController.didFinishPlaying
+      .receive(on: DispatchQueue.main)
+      .sink { [weak self] _ in
+        self?.playNextTrack(forced: false)
+      }
+      .store(in: &cancellables)
   }
   
   func setupFormatter() {
@@ -186,34 +209,43 @@ private extension PlayerViewModel {
     formatter.zeroFormattingBehavior = [.pad]
     formatter.allowedUnits = [.minute, .second]
   }
-  
-  func playNextTrack() {
-    let nextTrackIndex = (currentTrackIndex + 1) % tracks.count
-    currentTrackIndex = nextTrackIndex
-    playCurrentTrack()
-  }
-  
-  func playCurrentTrack() {
-    let url = tracks[currentTrackIndex].previewURL
-    let item = AVPlayerItem(url: url)
-    if let oldObserver = itemDidPlayToEndToken {
-      NotificationCenter.default.removeObserver(oldObserver)
+      
+  func playNextTrack(forced: Bool) {
+    if case .on(single: true) = repeatMode, !forced {
+      playCurrentTrack()
+      return
     }
-    itemDidPlayToEndToken = NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime,
-                                                                   object: item,
-                                                                   queue: .main) { [weak self] _ in
-      guard let self else { return }
-      if self.isInfinitePlaybackOn {
-        self.playNextTrack()
-      } else {
-        item.seek(to: CMTime(seconds: 0,
-                             preferredTimescale: CMTimeScale(NSEC_PER_SEC)),
-                  completionHandler: nil)
-        self.playbackState = .pause
-      }
+    
+    if isShuffleOn {
+      currentTrackIndex = (tracks.startIndex..<tracks.endIndex).randomElement()!
+      playCurrentTrack()
+      return
     }
-    player.replaceCurrentItem(with: item)
-    player.play()
+    
+    let nextTrackIndex = currentTrackIndex + 1
+    
+    guard nextTrackIndex == tracks.endIndex else {
+      currentTrackIndex = nextTrackIndex
+      playCurrentTrack()
+      return
+    }
+    
+    switch (forced, repeatMode) {
+    case (false, .on(single: true)):
+      playCurrentTrack()
+      
+    case (true, .on(single: true)):
+      playerController.setRelativeProgress(0)
+      
+    case (_, .off):
+      playerController.setRelativeProgress(0)
+      playerController.pause()
+      playbackState = .pause
+      
+    case (_, .on(single: false)):
+      currentTrackIndex = 0
+      playCurrentTrack()
+    }
   }
   
 }

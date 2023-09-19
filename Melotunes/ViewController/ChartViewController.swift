@@ -4,7 +4,8 @@ import Combine
 
 final class СhartViewController: UIViewController {
   
-  private let viewModel: ChartViewModel
+  let viewModel: ChartViewModel
+  
   private let artistsTableViewController: ArtistsTableViewController
   private var cancellables = Set<AnyCancellable>()
   

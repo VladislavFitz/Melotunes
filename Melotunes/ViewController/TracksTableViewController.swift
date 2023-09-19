@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import Combine
 
 final class TracksTableViewController: UITableViewController {
   
@@ -9,12 +10,13 @@ final class TracksTableViewController: UITableViewController {
     }
   }
   
-  var didSelect: ((Int) -> Void)?
+  let selectTrackAtIndex: PassthroughSubject<Int, Never>
   
   private let cellID = "cellID"
   
   init() {
     viewModels = []
+    selectTrackAtIndex = PassthroughSubject()
     super.init(style: .plain)
     tableView.register(TrackTableViewcell.self, forCellReuseIdentifier: cellID)
   }
@@ -28,7 +30,7 @@ final class TracksTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    didSelect?(indexPath.row)
+    selectTrackAtIndex.send(indexPath.row)
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

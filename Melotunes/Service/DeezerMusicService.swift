@@ -1,6 +1,6 @@
 import Foundation
 
-final class DeezerMusicService: ChartService & TracksService & ArtistService {
+final class DeezerMusicService: ChartService & TracksService & ArtistService & AlbumService {
   
   let baseURL: String
   let session: URLSession
@@ -36,6 +36,15 @@ final class DeezerMusicService: ChartService & TracksService & ArtistService {
     let request = URLRequest(url: url)
     let (data, _) = try await session.data(for: request)
     return try jsonDecoder.decode(DeezerArtist.self, from: data)
+  }
+  
+  func fetchAlbum(withID albumID: Int) async throws -> Album {
+    let url = URL(string: baseURL + "/album/\(albumID)")!
+    let request = URLRequest(url: url)
+    let (data, _) = try await session.data(for: request)
+    let deezerAlbum = try jsonDecoder.decode(DeezerAlbum.self, from: data)
+    let album = Album(deezerAlbum)
+    return album
   }
   
 }

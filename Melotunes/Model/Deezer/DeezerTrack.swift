@@ -4,10 +4,10 @@ struct DeezerTrack: Track, Decodable {
   
   let title: String
   
-  var sourceAlbum: Album {
+  var sourceAlbum: AlbumDescriptor {
     album
   }
-  let album: DeezerAlbum
+  let album: DeezerAlbumDescriptor
   
   var previewURL: URL {
     preview
@@ -17,7 +17,7 @@ struct DeezerTrack: Track, Decodable {
   var duration: TimeInterval
   
   init(title: String,
-       album: DeezerAlbum,
+       album: DeezerAlbumDescriptor,
        duration: TimeInterval,
        preview: URL) {
     self.title = title
