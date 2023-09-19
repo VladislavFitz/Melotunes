@@ -1,7 +1,6 @@
 import Foundation
 
 struct DeezerAlbum: Decodable {
-  
   let title: String
   let cover_xl: URL
   let release_date: String
@@ -11,7 +10,6 @@ struct DeezerAlbum: Decodable {
   struct Tracks: Decodable {
     let data: [DeezerTrack]
   }
-  
 }
 
 extension Album {
@@ -22,8 +20,8 @@ extension Album {
     self.init(title: deezerAlbum.title,
               coverImageURL: deezerAlbum.cover_xl,
               releaseDate: dateFormatter.date(from:  deezerAlbum.release_date)!,
-              artist: deezerAlbum.artist,
-              tracks: deezerAlbum.tracks.data)
+              artist: Artist(deezerAlbum.artist),
+              tracks: deezerAlbum.tracks.data.map(Track.init))
   }
   
 }

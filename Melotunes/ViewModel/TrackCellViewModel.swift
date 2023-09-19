@@ -19,9 +19,9 @@ struct TrackCellViewModel {
 extension TrackCellViewModel {
   
   init(track: Track) {
-    self.init(albumCoverURL: track.sourceAlbum.coverImageURL,
+    self.init(albumCoverURL: track.album.coverImageURL,
               title: track.title,
-              albumTitle: track.sourceAlbum.title)
+              albumTitle: track.album.title)
   }
   
 }

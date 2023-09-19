@@ -1,7 +1,7 @@
 import Foundation
 
-protocol Chart {
+struct Chart {
   
-  var items: [Artist] { get }
+  let items: [Artist]
   
 }

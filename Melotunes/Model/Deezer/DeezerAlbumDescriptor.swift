@@ -1,13 +1,17 @@
 import Foundation
 
-struct DeezerAlbumDescriptor: AlbumDescriptor, Decodable {
-  
+struct DeezerAlbumDescriptor: Decodable {
   let id: Int
   let title: String
   let cover_xl: URL
+}
+
+extension AlbumDescriptor {
   
-  var coverImageURL: URL {
-    cover_xl
+  init(_ descriptor: DeezerAlbumDescriptor) {
+    self.init(id: descriptor.id,
+              title: descriptor.title,
+              coverImageURL: descriptor.cover_xl)
   }
-   
+  
 }

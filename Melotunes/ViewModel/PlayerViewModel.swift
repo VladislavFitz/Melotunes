@@ -115,7 +115,7 @@ final class PlayerViewModel {
     case .toggleInfinitePlayback:
       isShuffleOn.toggle()
     case .tapAlbum:
-      requestAlbum.send(tracks[currentTrackIndex].sourceAlbum)
+      requestAlbum.send(tracks[currentTrackIndex].album)
     }
   }
   
@@ -159,7 +159,7 @@ private extension PlayerViewModel {
       .eraseToAnyPublisher()
     
     imageURL = currentTrack
-      .map(\.?.sourceAlbum.coverImageURL)
+      .map(\.?.album.coverImageURL)
       .eraseToAnyPublisher()
     
     relativeProgress = playerController.$absoluteProgress
@@ -176,7 +176,7 @@ private extension PlayerViewModel {
     info = $artist
       .combineLatest(currentTrack)
       .map { artist, track in
-        "\(artist.name)\(track.flatMap { " – \($0.sourceAlbum.title)"} ?? "")"
+        "\(artist.name)\(track.flatMap { " – \($0.album.title)"} ?? "")"
       }
       .eraseToAnyPublisher()
     

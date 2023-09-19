@@ -52,6 +52,7 @@
 		AFA3A03A2AB8F4AA00CBE5F1 /* PlaybackControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A0392AB8F4AA00CBE5F1 /* PlaybackControlPanel.swift */; };
 		AFA3A03C2AB8F4C600CBE5F1 /* PlaybackModePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A03B2AB8F4C600CBE5F1 /* PlaybackModePanel.swift */; };
 		AFA3A03F2AB91E9B00CBE5F1 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A03E2AB91E9B00CBE5F1 /* ViewModelFactory.swift */; };
+		AFA3A0432ABA51EF00CBE5F1 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA3A0422ABA51EF00CBE5F1 /* ServiceError.swift */; };
 		AFB651B72AB3D32A006B3617 /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB651B62AB3D32A006B3617 /* ArtistService.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		AFA3A0392AB8F4AA00CBE5F1 /* PlaybackControlPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackControlPanel.swift; sourceTree = "<group>"; };
 		AFA3A03B2AB8F4C600CBE5F1 /* PlaybackModePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackModePanel.swift; sourceTree = "<group>"; };
 		AFA3A03E2AB91E9B00CBE5F1 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		AFA3A0422ABA51EF00CBE5F1 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		AFB651B62AB3D32A006B3617 /* ArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				AF6211282AB3C36D0029A1E1 /* DeezerMusicService.swift */,
+				AFA3A0422ABA51EF00CBE5F1 /* ServiceError.swift */,
 				AF6211272AB3C36D0029A1E1 /* ChartService.swift */,
 				AF6211292AB3C36D0029A1E1 /* TracksService.swift */,
 				AFB651B62AB3D32A006B3617 /* ArtistService.swift */,
@@ -374,6 +377,7 @@
 				AF62110D2AB3C2A00029A1E1 /* SceneDelegate.swift in Sources */,
 				AF62114A2AB3C36D0029A1E1 /* ChartViewModel.swift in Sources */,
 				AFA3A03A2AB8F4AA00CBE5F1 /* PlaybackControlPanel.swift in Sources */,
+				AFA3A0432ABA51EF00CBE5F1 /* ServiceError.swift in Sources */,
 				AF62115B2AB3C3DA0029A1E1 /* UIStackView+Helper.swift in Sources */,
 				AF6211402AB3C36D0029A1E1 /* ArtistsTableViewController.swift in Sources */,
 				AF62113F2AB3C36D0029A1E1 /* PlayerViewController.swift in Sources */,

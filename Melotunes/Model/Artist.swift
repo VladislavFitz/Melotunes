@@ -1,11 +1,23 @@
 import Foundation
 
-protocol Artist {
+struct Artist {
   
-  var id: Int { get }
-  var name: String { get }
-  var imageURL: URL { get }
-  var fansCount: Int { get }
-  var albumsCount: Int { get }
+  let id: Int
+  let name: String
+  let imageURL: URL
+  let fansCount: Int
+  let albumsCount: Int
+  
+  init(id: Int,
+       name: String,
+       imageURL: URL,
+       fansCount: Int,
+       albumsCount: Int) {
+    self.id = id
+    self.name = name
+    self.imageURL = imageURL
+    self.fansCount = fansCount
+    self.albumsCount = albumsCount
+  }
   
 }

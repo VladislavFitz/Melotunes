@@ -1,29 +1,19 @@
 import Foundation
 
-struct DeezerTrack: Track, Decodable {
-  
+struct DeezerTrack: Decodable {
   let title: String
-  
-  var sourceAlbum: AlbumDescriptor {
-    album
-  }
   let album: DeezerAlbumDescriptor
-  
-  var previewURL: URL {
-    preview
-  }
   let preview: URL
+  let duration: TimeInterval
+}
+
+extension Track {
   
-  var duration: TimeInterval
-  
-  init(title: String,
-       album: DeezerAlbumDescriptor,
-       duration: TimeInterval,
-       preview: URL) {
-    self.title = title
-    self.album = album
-    self.duration = duration
-    self.preview = preview
+  init(_ track: DeezerTrack) {
+    self.init(title: track.title,
+              sourceAlbum: AlbumDescriptor(track.album),
+              duration: track.duration,
+              previewURL: track.preview)
   }
   
 }

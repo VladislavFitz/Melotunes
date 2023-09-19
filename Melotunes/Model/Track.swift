@@ -1,10 +1,20 @@
 import Foundation
 
-protocol Track {
+struct Track {
   
-  var title: String { get }
-  var sourceAlbum: AlbumDescriptor { get }
-  var duration: TimeInterval { get }
-  var previewURL: URL { get }
+  let title: String
+  let album: AlbumDescriptor
+  let duration: TimeInterval
+  let previewURL: URL
+  
+  init(title: String,
+       sourceAlbum: AlbumDescriptor,
+       duration: TimeInterval,
+       previewURL: URL) {
+    self.title = title
+    self.album = sourceAlbum
+    self.duration = duration
+    self.previewURL = previewURL
+  }
   
 }

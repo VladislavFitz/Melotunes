@@ -1,9 +1,9 @@
 import Foundation
 
-protocol AlbumDescriptor {
+struct AlbumDescriptor {
   
-  var id: Int { get }
-  var title: String { get }
-  var coverImageURL: URL { get }
+  let id: Int
+  let title: String
+  let coverImageURL: URL
   
 }

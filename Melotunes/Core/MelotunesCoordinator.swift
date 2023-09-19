@@ -2,7 +2,6 @@ import Foundation
 import UIKit
 import Combine
 
-
 final class MelotunesCoordinator {
   
   let navigationController: UINavigationController
